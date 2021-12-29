@@ -10,6 +10,11 @@ const CANVAS_SIZE = 600;
 canvas.width = CANVAS_SIZE;
 canvas.height = CANVAS_SIZE;
 
+//background initialize
+ctx.fillStyle = 'white';
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+// initialize context color and stroke size
 ctx.strokeStyle = INITIAL_COLOR;
 ctx.fillStyle = INITIAL_COLOR;
 ctx.lineWidth = 2.5;
@@ -60,7 +65,9 @@ function handleModeClick(){
 }
 
 function handleCanvasClick(){
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    if(filling){
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
 }
 
 if(canvas){
